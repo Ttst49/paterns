@@ -1,3 +1,4 @@
+#[allow(unused)]
 fn if_let_learning(){
     let favorite_color :Option<&str> = None;
     let we_are_tuesday =false;
@@ -18,6 +19,17 @@ fn if_let_learning(){
     }
 }
 
+#[allow(unused)]
+fn while_let_learning(){
+    let mut pile = Vec::new();
+    pile.push(1);
+    pile.push(2);
+    pile.push(3);
+
+    while let Some(top_data) = pile.pop() {
+        println!("{}",top_data);
+    }
+}
 
 fn main() {
     if_let_learning();
