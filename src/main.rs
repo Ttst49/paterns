@@ -41,6 +41,6 @@ fn for_pattern_learning(){
     }
 }
 
+
 fn main() {
-    for_pattern_learning();
 }
