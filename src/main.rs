@@ -1,7 +1,7 @@
 #[allow(unused)]
 fn if_let_learning(){
     let favorite_color :Option<&str> = None;
-    let we_are_tuesday =false;
+    let we_are_tuesday = false;
     let age: Result<u64,_> = "34".parse();
 
     if let Some(color) = favorite_color{
@@ -31,6 +31,16 @@ fn while_let_learning(){
     }
 }
 
+
+#[allow(unused)]
+fn for_pattern_learning(){
+    let v = vec!["a","b","c"];
+
+    for (index,value) in v.iter().enumerate(){
+        println!("{} is at index: {}",value,index);
+    }
+}
+
 fn main() {
-    if_let_learning();
+    for_pattern_learning();
 }
