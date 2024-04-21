@@ -42,5 +42,12 @@ fn for_pattern_learning(){
 }
 
 
+#[allow(unused)]
+fn show_coords(&(x,y):&(i64,i64)){
+    println!("Current coords : ({},{})",x,y)
+}
+
 fn main() {
+    let point = (3,5);
+    show_coords(&point)
 }
