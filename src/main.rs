@@ -58,6 +58,20 @@ fn matching_literals(){
 }
 
 
+fn matching_with_masked_variable(){
+    let x = Some(5);
+    let y = 10;
+
+    match x {
+        Some(50) => println!("We got 50"),
+        Some(y) => println!("We got y = {}",y),
+        _=>println!("Default case: {:?}",x)
+    }
+
+    println!("At the end, x={:?} and y={:?}",x,y)
+
+}
+
 fn main() {
-    matching_literals();
+    matching_with_masked_variable();
 }
