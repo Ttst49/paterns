@@ -51,9 +51,9 @@ fn matching_literals(){
     let x= input.trim().parse().expect("Wrong data");
 
     match x {
-        1=>println!("one"),
-        2=>println!("two"),
+        1 | 2=>println!("one or two"),
         3=>println!("three"),
+        4=>println!("four"),
         _=>println!("anything else")
     }
 }
@@ -74,5 +74,5 @@ fn matching_with_masked_variable(){
 }
 
 fn main() {
-    matching_with_masked_variable();
+    matching_literals();
 }
