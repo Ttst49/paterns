@@ -1,3 +1,5 @@
+use std::io;
+
 #[allow(unused)]
 fn if_let_learning(){
     let favorite_color :Option<&str> = None;
@@ -42,7 +44,11 @@ fn for_pattern_learning(){
 }
 
 fn matching_literals(){
-    let x = 1;
+    let mut input = String::new();
+    println!("Enter an integer:");
+    io::stdin().read_line(&mut input).expect("Failed to read line");
+    let x= input.trim().parse().expect("Wrong data");
+
     match x {
         1=>println!("one"),
         2=>println!("two"),
@@ -53,4 +59,5 @@ fn matching_literals(){
 
 
 fn main() {
+    matching_literals();
 }
