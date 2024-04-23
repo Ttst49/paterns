@@ -58,7 +58,7 @@ fn matching_literals(){
     }
 }
 
-
+#[allow(unused)]
 fn matching_with_masked_variable(){
     let x = Some(5);
     let y = 10;
