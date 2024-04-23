@@ -43,6 +43,7 @@ fn for_pattern_learning(){
     }
 }
 
+#[allow(unused)]
 fn matching_literals(){
     let mut input = String::new();
     println!("Enter an integer:");
