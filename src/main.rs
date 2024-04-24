@@ -73,6 +73,7 @@ fn matching_with_masked_variable() {
     println!("At the end, x={:?} and y={:?}", x, y)
 }
 
+#[allow(unused)]
 enum Message {
     Quit,
     Move { x: i64, y: i64 },
@@ -80,6 +81,7 @@ enum Message {
     ChangeColor(i64, i64, i64),
 }
 
+#[allow(unused)]
 fn using_message_enum() {
     let msg = Message::ChangeColor(10, 160, 255);
 
