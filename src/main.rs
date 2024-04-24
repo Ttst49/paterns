@@ -115,6 +115,23 @@ fn using_message_enum() {
     }
 }
 
+#[allow(unused)]
+fn matching_with_default() {
+    let mut setting_value = Some(5);
+    let new_setting_value = Some(10);
+
+    match (setting_value, new_setting_value) {
+        (Some(_), Some(_)) => {
+            println!("You can't override existing data");
+        }
+        _ => {
+            setting_value = new_setting_value;
+        }
+    }
+
+    println!("setting equal {:?}", setting_value);
+}
+
 fn main() {
-    matching_with_masked_variable();
+    matching_with_default();
 }
