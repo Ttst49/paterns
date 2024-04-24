@@ -73,17 +73,22 @@ fn matching_with_masked_variable() {
     println!("At the end, x={:?} and y={:?}", x, y)
 }
 
+enum Color {
+    Rgb(i64, i64, i64),
+    Tsv(i64, i64, i64),
+}
+
 #[allow(unused)]
 enum Message {
     Quit,
     Move { x: i64, y: i64 },
     Write(String),
-    ChangeColor(i64, i64, i64),
+    ChangeColor(Color),
 }
 
 #[allow(unused)]
 fn using_message_enum() {
-    let msg = Message::ChangeColor(10, 160, 255);
+    let msg = Message::ChangeColor(Color::Rgb(134, 23, 27));
 
     match msg {
         Message::Quit => {
@@ -95,10 +100,16 @@ fn using_message_enum() {
         Message::Write(text) => {
             println!("textual message: {}", text)
         }
-        Message::ChangeColor(r, g, b) => {
+        Message::ChangeColor(Color::Rgb(r, g, b)) => {
             println!(
                 "Changing red value to {}, green to {} and blue to {}",
                 r, g, b
+            )
+        }
+        Message::ChangeColor(Color::Tsv(t, s, v)) => {
+            println!(
+                "Changing hue to {}, vividness to {} and brightness to {}",
+                t, s, v
             )
         }
     }
