@@ -157,6 +157,16 @@ fn wrong_double_dots_method(){
     //}
 }
 
+#[allow(unused)]
+fn control_by_if_match(){
+    let number= Some(4);
+    match number {
+        Some(x) if x % 2 == 0=>println!("number is odd"),
+            Some(x)=>println!("number is not odd"),
+            None=>(),
+    }
+}
+
 fn main() {
-    matching_with_default();
+    control_by_if_match();
 }
