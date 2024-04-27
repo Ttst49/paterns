@@ -167,6 +167,11 @@ fn control_by_if_match(){
     }
 }
 
+enum NewMessage {
+    Hello{id:i32},
+}
+
+
 fn main() {
     control_by_if_match();
 }
