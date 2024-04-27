@@ -147,9 +147,16 @@ match origin{
 
 }
 
+#[allow(unused)]
+fn wrong_double_dots_method(){
+    //let numbers = (2,23,23,34,80);
+//match numbers {
+    //(..,second,..)=>{
+        //println!("here are some numbers {}",second)
+    //}
+    //}
+}
 
 fn main() {
-
-
     matching_with_default();
 }
