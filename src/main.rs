@@ -171,7 +171,21 @@ enum NewMessage {
     Hello{id:i32},
 }
 
+#[allow(unused)]
+fn using_at_operator(){
+    let msg = NewMessage::Hello { id: 5 };
+    match msg {
+        NewMessage::Hello {
+            id:id_variable @ 3..=7,
+        }=>println!("we got variable in interval :{}",id_variable),
+        NewMessage::Hello { id:10..=12 }=>{
+            println!("we got an id with another interval")
+        }
+        NewMessage::Hello { id }=>println!("we got another id: {}",id)
+    }
+}
+
 
 fn main() {
-    control_by_if_match();
+    using_at_operator();
 }
