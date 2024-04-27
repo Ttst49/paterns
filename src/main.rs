@@ -75,7 +75,6 @@ fn matching_with_masked_variable() {
 
 enum Color {
     Rgb(i64, i64, i64),
-    Tsv(i64, i64, i64),
 }
 
 #[allow(unused)]
@@ -106,7 +105,7 @@ fn using_message_enum() {
                 r, g, b
             )
         }
-        Message::ChangeColor(Color::Tsv(t, s, v)) => {
+        Message::ChangeColor(Color::Rgb(t, s, v)) => {
             println!(
                 "Changing hue to {}, vividness to {} and brightness to {}",
                 t, s, v
@@ -117,6 +116,7 @@ fn using_message_enum() {
 
 #[allow(unused)]
 fn matching_with_default() {
+
     let mut setting_value = Some(5);
     let new_setting_value = Some(10);
 
@@ -132,6 +132,23 @@ fn matching_with_default() {
     println!("setting equal {:?}", setting_value);
 }
 
+
+#[allow(unused)]
+fn use_only_what_needed(){
+    struct Point{
+        x:i64,
+        y:i64,
+        z:i64
+    }
+let origin = Point{x:0,y:12,z:32};
+match origin{
+    Point{x,..} => println!("x equal {}",x)
+    }
+
+}
+
 fn main() {
+
+
     matching_with_default();
 }
